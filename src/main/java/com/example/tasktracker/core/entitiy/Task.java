@@ -3,7 +3,7 @@ package com.example.tasktracker.core.entitiy;
 import jakarta.persistence.*;
 
 @Entity
-public class Task {
+class Task {
     private @Id @GeneratedValue Long id;
     private String title;
     private String note;
