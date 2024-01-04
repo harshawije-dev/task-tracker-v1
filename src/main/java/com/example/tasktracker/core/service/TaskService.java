@@ -5,16 +5,16 @@ import com.example.tasktracker.core.interfaces.ITaskService;
 import com.example.tasktracker.core.repository.TaskRepository;
 
 class TaskService implements ITaskService {
-    private TaskRepository repository;
+    private TaskRepository taskRepository;
 
     TaskService(TaskRepository repository) {
-        this.repository = repository;
+        this.taskRepository = repository;
     }
 
     public TaskService() {}
 
     @Override
-    public Task create() {
+    public Task create(Task task) {
         return null;
     }
 

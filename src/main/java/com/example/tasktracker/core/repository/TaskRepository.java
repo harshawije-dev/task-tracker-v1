@@ -1,36 +1,12 @@
 package com.example.tasktracker.core.repository;
 
-import com.example.tasktracker.core.entity.Task;
 import com.example.tasktracker.core.interfaces.ITaskRepository;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
-public class TaskRepository implements ITaskRepository {
+@Repository
+public abstract class TaskRepository implements ITaskRepository {
 
-    TaskRepository() {
-    }
-
-    @Override
-    public JpaRepository<Task, Long> createTask() {
-        return null;
-    }
-
-    @Override
-    public JpaRepository<Task, Long> getTask() {
-        return null;
-    }
-
-    @Override
-    public JpaRepository<Task, Long> listTask() {
-        return null;
-    }
-
-    @Override
-    public JpaRepository<Task, Long> updateTask() {
-        return null;
-    }
-
-    @Override
-    public JpaRepository<Task, Long> deleteTask() {
-        return null;
-    }
+    @Autowired
+    private ITaskRepository iTaskRepository;
 }
