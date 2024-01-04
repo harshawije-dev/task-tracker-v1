@@ -2,10 +2,12 @@ package com.example.tasktracker.core.interfaces;
 
 import com.example.tasktracker.core.entity.Task;
 
+import java.util.List;
+
 public interface ITaskService {
     public Task create(Task task);
-    public Task getTask();
-    public Task listTask();
-    public Task updateTask();
-    public Task deleteTask();
+    public Task getTask(String id);
+    public List<Task> listTask();
+    public String updateTask();
+    public String deleteTask();
 }
