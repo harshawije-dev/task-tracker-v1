@@ -1,4 +1,4 @@
-package com.example.tasktracker.core.entitiy;
+package com.example.tasktracker.core.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -6,10 +6,11 @@ import jakarta.persistence.Id;
 
 @Entity
 class Category {
-    private @Id @GeneratedValue Long id;
+    private @Id
+    @GeneratedValue Long id;
     private String category;
 
-    protected Category(String category) {
+    Category(String category) {
         this.category = category;
     }
 

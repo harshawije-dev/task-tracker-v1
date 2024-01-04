@@ -1,9 +1,9 @@
-package com.example.tasktracker.core.entitiy;
+package com.example.tasktracker.core.entity;
 
 import jakarta.persistence.*;
 
 @Entity
-class Task {
+public class Task {
     private @Id @GeneratedValue Long id;
     private String title;
     private String note;
@@ -13,7 +13,6 @@ class Task {
     private boolean isCompleted = false;
     private boolean isPinned = false;
 
-    private Task() {}
 
     Task(String title, String note, Category category) {
         this.title = title;
