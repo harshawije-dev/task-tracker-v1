@@ -12,5 +12,5 @@ public interface ITaskRepository {
     public List<Task> listTasks();
     public Optional<?> getTask(Long id);
     public Task updateTask(Long id, Task updateTask);
-    public Task deleteTask(Long id);
+    public void deleteTask(Long id);
 }

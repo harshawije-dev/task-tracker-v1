@@ -40,5 +40,9 @@ public class TaskController{
                 orElseThrow(()-> new TaskRejectedException("Error Occurred"));
     }
 
+    @DeleteMapping("/task/{id}")
+    private void delete(@PathVariable Long id) {
+        taskService.deleteTask(id);
+    }
 
 }

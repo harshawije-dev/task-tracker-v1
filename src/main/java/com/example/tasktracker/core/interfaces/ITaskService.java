@@ -10,5 +10,5 @@ public interface ITaskService {
     public Task getTask(Long id);
     public List<Task> listTask();
     public Optional<?> updateTask(Long id, Task task);
-    public String deleteTask();
+    public void deleteTask(Long id);
 }

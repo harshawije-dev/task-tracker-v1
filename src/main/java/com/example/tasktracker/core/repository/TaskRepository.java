@@ -60,7 +60,7 @@ public class TaskRepository implements ITaskRepository {
      * @return
      */
     @Override
-    public Task deleteTask(Long id) {
-        return null;
+    public void deleteTask(Long id) {
+        repository.deleteById(id);
     }
 }

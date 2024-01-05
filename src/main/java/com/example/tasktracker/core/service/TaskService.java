@@ -57,7 +57,11 @@ public class TaskService implements ITaskService {
     }
 
     @Override
-    public String deleteTask() {
-        return null;
+    public void deleteTask(Long id) {
+        try {
+            taskRepository.deleteTask(id);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
