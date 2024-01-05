@@ -5,10 +5,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 @Entity
-class Category {
-    private @Id
-    @GeneratedValue Long id;
+public class Category {
+    private @Id @GeneratedValue Long id;
     private String category;
+
+    protected Category() {}
 
     Category(String category) {
         this.category = category;

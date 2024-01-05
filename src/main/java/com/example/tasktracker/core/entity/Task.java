@@ -8,11 +8,13 @@ public class Task {
     private String title;
     private String note;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "column_id", referencedColumnName = "id")
+    @JoinColumn(name = "categoryId", referencedColumnName = "id")
     private Category category;
     private boolean isCompleted = false;
     private boolean isPinned = false;
 
+
+    protected Task() {}
 
     Task(String title, String note, Category category) {
         this.title = title;
