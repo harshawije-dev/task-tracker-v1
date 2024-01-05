@@ -2,23 +2,22 @@ package com.example.tasktracker.controller;
 
 import com.example.tasktracker.core.entity.Task;
 import com.example.tasktracker.core.service.TaskService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.task.TaskRejectedException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("api/v1/task-tracker")
 public class TaskController{
 
-    @Autowired
     private final TaskService taskService;
 
     public TaskController(TaskService taskService) {
         this.taskService = taskService;
     }
 
-    @RequestMapping("/task/{id}")
+    @GetMapping("/task/{id}")
     public Task get(@PathVariable Long id){
         return taskService.getTask(id);
     }
