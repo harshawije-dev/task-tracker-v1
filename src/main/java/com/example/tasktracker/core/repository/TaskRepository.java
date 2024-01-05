@@ -44,8 +44,15 @@ public class TaskRepository implements ITaskRepository {
      * @return
      */
     @Override
-    public Task updateTask(String id, Task updateTask) {
-        return null;
+    public Task updateTask(Long id, Task updateTask) {
+        return repository.findById(id).map(task -> {
+            task.setTitle(updateTask.getTitle());
+            task.setNote(updateTask.getTitle());
+            return repository.save(task);
+        }).orElseGet(()-> {
+            updateTask.setId(id);
+            return repository.save(updateTask);
+        });
     }
 
     /**
@@ -53,7 +60,7 @@ public class TaskRepository implements ITaskRepository {
      * @return
      */
     @Override
-    public Task deleteTask(String id) {
+    public Task deleteTask(Long id) {
         return null;
     }
 }
