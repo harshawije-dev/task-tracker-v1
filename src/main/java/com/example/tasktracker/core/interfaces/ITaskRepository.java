@@ -4,12 +4,13 @@ import com.example.tasktracker.core.entity.Task;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface ITaskRepository {
     public Task create(Task task);
     public List<Task> listTasks();
-    public Task getTask(String id);
+    public Optional<?> getTask(Long id);
     public Task updateTask(String id, Task updateTask);
     public Task deleteTask(String id);
 }

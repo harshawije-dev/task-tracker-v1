@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class TaskRepository implements ITaskRepository {
@@ -14,7 +15,7 @@ public class TaskRepository implements ITaskRepository {
     @Autowired
     private IRepository repository;
 
-    public TaskRepository(IRepository repository) {
+    TaskRepository(IRepository repository) {
         this.repository = repository;
     }
 
@@ -33,8 +34,8 @@ public class TaskRepository implements ITaskRepository {
      * @return
      */
     @Override
-    public Task getTask(String id) {
-        return null;
+    public Optional<Task> getTask(Long id) {
+        return repository.findById(id);
     }
 
     /**

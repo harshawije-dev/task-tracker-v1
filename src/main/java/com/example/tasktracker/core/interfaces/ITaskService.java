@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ITaskService {
     public Task create(Task task);
-    public Task getTask(String id);
+    public Task getTask(Long id);
     public List<Task> listTask();
     public String updateTask();
     public String deleteTask();
